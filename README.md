@@ -17,4 +17,4 @@
 ```docker run -p 3000:3000 react-todos```
 
 ## Screenshots
-![Screenshot of the todo list app](./docs/todo.png)
+![Screenshot of the todo list app](./docs/todo.PNG)
