@@ -1,28 +1,12 @@
-import React, { useState, useEffect } from "react"
-import axios from 'axios'
+import './todo-list.css'
 
 import TodoItem from "./todo-item"
 
-function TodoList() {
-    const [data, setData] = useState([{"name": "foo"}, {"name": "bar"}])
-    
-    useEffect(() => {
-        let ignore = false
-
-        async function fetchData() {
-            const result = await axios('https://demo.minder.care/interview/task')
-            
-            if (!ignore) { setData(result.data) }
-        }
-        fetchData()
-
-        return () => ignore = true
-    })
-
+function TodoList({list, onSelect}) {
     return (
         <>
-          <ul>
-            {data.map(item => <TodoItem item={item} />)}
+          <ul className="todo-list">
+            {list.map((item, i) => <TodoItem key={i} item={item} onClick={() => onSelect(i)} />)}
           </ul>
         </>
     );

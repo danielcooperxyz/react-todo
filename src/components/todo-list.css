@@ -1,0 +1,21 @@
+.todo-list li {
+    list-style: none;
+    background: #f0f0f0;
+    padding: 1vh;
+    margin: 2vh;
+    border-radius: 3px;
+}
+.todo-details {
+    list-style: none;
+    background: #f0f0f0;
+    padding: 2vh;
+    margin: 4vh;
+    border-radius: 3px;
+}
+.todo-list li h3, .todo-details h3 {
+    margin-top: 0;
+}
+
+.todo-list li h3 svg, .todo-details h3 svg {
+    padding: 0 10px
+}

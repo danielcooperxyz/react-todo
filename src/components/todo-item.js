@@ -1,13 +1,12 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { getStatusColour } from "../helpers/status";
+import { getStatusIcon } from "../helpers/status";
 
-function TodoItem({ item }) {
-
+function TodoItem({ item, onClick}) {
     return (
         <>
-          <li>
-            <p>{item.name}</p>
-            <p>{item.description}</p>
-            <p>{item.status}</p>
-            <p>{item.createdAt}</p>
+          <li style={{backgroundColor:getStatusColour(item.status)}} onClick={onClick}>
+            <h3><FontAwesomeIcon icon={getStatusIcon(item.status)} />{item.name}</h3>
             <p>{item.dueDate}</p>
           </li>
         </>

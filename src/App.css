@@ -40,3 +40,9 @@ h2 {
     transform: rotate(360deg);
   }
 }
+
+
+.App main {
+  display: flex;
+  flex-direction:row;
+}
