@@ -41,6 +41,9 @@ h2 {
   }
 }
 
+.todo-list, .todo-details {
+  width: 40vw;
+}
 
 .App main {
   display: flex;

@@ -5,6 +5,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import TodoList from './components/todo-list';
+import TodoDetails from "./components/todo-details";
 
 function App() {
   const [data, setData] = useState([{"name": "foo"}, {"name": "bar"}])
@@ -35,6 +36,7 @@ function App() {
           onSelect={(index) => {
             setSelected(index)
           }}/>
+        <TodoDetails item={data[selected]} />
       </main>
     </div>
   );
