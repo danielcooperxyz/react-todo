@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getStatusColour } from "../helpers/status";
 import { getStatusIcon } from "../helpers/status";
 
+
 function TodoItem({ item, onClick}) {
     return (
         <>

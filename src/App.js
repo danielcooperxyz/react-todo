@@ -8,12 +8,21 @@ import TodoList from './components/todo-list';
 import TodoDetails from "./components/todo-details";
 
 function App() {
+  const [ignore, setIgnore] = useState(false)
   const [data, setData] = useState([{"name": "foo"}, {"name": "bar"}])
   const [selected, setSelected] = useState(0)
   
-  useEffect(() => {
-      let ignore = false
+  const updateStatus = (newStatus, id) => { 
+    let temp = data[id]
+    const newData = [...data]
 
+    temp.status = newStatus
+
+    newData[id] = temp
+    setData(newData)
+  }
+
+  useEffect(() => {
       async function fetchData() {
           const result = await axios('https://demo.minder.care/interview/task')
           
@@ -21,7 +30,7 @@ function App() {
       }
       fetchData()
 
-      return () => ignore = true
+      return () => setIgnore(true)
   })
 
   return (
@@ -36,7 +45,7 @@ function App() {
           onSelect={(index) => {
             setSelected(index)
           }}/>
-        <TodoDetails item={data[selected]} />
+        <TodoDetails item={data[selected]} id={selected} updateStatus={updateStatus} />
       </main>
     </div>
   );
